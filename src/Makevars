@@ -1,0 +1,3 @@
+PKG_CXXFLAGS= -I/usr/include
+PKG_LDFLAGS= -L/usr/lib
+PKG_LIBS= -lcfitsio
