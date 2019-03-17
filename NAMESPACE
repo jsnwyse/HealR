@@ -1,0 +1,21 @@
+useDynLib(HealR)
+
+importFrom(Matrix,Matrix)
+importFrom(Matrix,image)
+importFrom(imager,as.cimg)
+importFrom(graphics,plot)
+
+S3method( plot, HealR )
+
+exportPattern(
+"healpix.nested.write.patch", 
+"healpix.nested.create.file",
+"healpix.nested.write.file",
+"healpix.nested.extract.patch"
+)
+
+
+
+
+
+

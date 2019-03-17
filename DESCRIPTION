@@ -1,0 +1,16 @@
+Package: HealR
+Type: Package
+Title: I/O and visualisation tools for FITS files in Healpix nested orderings
+Version: 1.0
+Date: 2018-03-02
+Depends: Matrix, imager, scales
+Authors@R: c( person( "Jason", "Wyse", email = "wyseja@tcd.ie", role = c( "aut", "cre" ) ) )
+Description: I/O and visualisation tools for FITS files in Healpix orderings.
+License: GPL (>= 2)
+Imports: 
+Packaged: 
+Author: Jason Wyse [aut, cre] 
+Maintainer: Jason Wyse <wyseja@tcd.ie>
+NeedsCompilation: yes
+Repository: CRAN
+
