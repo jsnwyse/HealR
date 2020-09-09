@@ -1,5 +1,5 @@
 
-healpix.nested.extract.patch <- function( file = NULL, nside = NULL, rows = NULL, cols = NULL, patch = 0, plot = TRUE, mask = NULL, main="", output.Matrix=FALSE )
+healpix.nested.extract.patch <- function( file = NULL, nside = NULL, rows = NULL, cols = NULL, patch = 0, colnum=1, plot = TRUE, mask = NULL, main="", output.Matrix=FALSE )
 {
 	if( is.null(file) ) stop("please provide a file name with the fits extension")
 	
@@ -46,7 +46,7 @@ healpix.nested.extract.patch <- function( file = NULL, nside = NULL, rows = NULL
 	{
 	  status <- rep(0,2)
 		w0 <- .C( "astro_extract_nested_healpix_patch", 		
-						  as.character(mask),
+						as.character(mask),
 			  			as.integer(nside),							
 			  			as.integer(patch),
 			  			as.integer(nside), 		
@@ -55,7 +55,8 @@ healpix.nested.extract.patch <- function( file = NULL, nside = NULL, rows = NULL
 			  			as.integer(all.cols),
 			  			x = as.double(x),							
 			  			status = as.integer(status),
-			  			as.integer(hduno),
+			  			as.integer(hduno), 
+			  			as.integer(1),
 			  			PACKAGE="HealR" )	
 		if( w0$status[1] == 104 ) stop(paste0("file '", mask ,"' either does not exist or could not be opened"))
 		msk <- w0$x
@@ -70,7 +71,7 @@ healpix.nested.extract.patch <- function( file = NULL, nside = NULL, rows = NULL
 	{
 	  status <- rep(0,2)
 		w <- .C( "astro_extract_nested_healpix_patch", 		
-							  as.character(file[k]),
+							as.character(file[k]),
 				  			as.integer(nside),							
 				  			as.integer(patch),
 				  			as.integer(nside), 		
@@ -80,9 +81,11 @@ healpix.nested.extract.patch <- function( file = NULL, nside = NULL, rows = NULL
 				  			x = as.double(x),							
 				  			status = as.integer(status),
 				  			as.integer(hduno),
+				  			as.integer(colnum),
 				  			PACKAGE="HealR" )	
 		status.files[k] <- w$status[1]
 		if( w$status[1] == 104 ) stop(paste0("file '", file[k] ,"' either does not exist or could not be opened"))
+		if( w$status[1] == 302 ) stop(paste0("file '", file[k] ,": requested column number exceeds number of fields in file"))
 		
 		if( sub.arr ) 
 		  out$X[[k]] <- w$x[idx] * msk[idx]

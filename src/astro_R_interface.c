@@ -11,7 +11,6 @@
 	
 #include <R.h>
 #include <Rmath.h>
-#include <R_ext/Rdynload.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -21,38 +20,23 @@
 #include "healpix_utils.h"
 #include "chealpix.h"
 #include "defs.h"
-	
-static void astro_extract_nested_healpix_patch( char **filename, int *nside, int *patch, int *nrow, int *rows, int *ncol, int *cols, double *x, int *status, int *hdu_no, int *col_no );
-	
-static void astro_create_nested_healpix_file( char **filename, int *nside, int *nfields, int *status );
-	
-static void astro_write_nested_healpix_patch( char **filename, double *x, int *nside, int *nwrite, int *rows, int *cols, int *colnum, int *status, int  *patch );
-	
-static void astro_write_vector_to_healpix_file_0( char **filename, double *x, int *nside, int *colnum, int *status );	
-	
-	
-static const R_CMethodDef cMethods[] = {
-	  {"astro_extract_nested_healpix_patch", (DL_FUNC) &astro_extract_nested_healpix_patch, 11},
-	  {"astro_create_nested_healpix_file", (DL_FUNC) &astro_create_nested_healpix_file, 4},
-	  {"astro_write_nested_healpix_patch", (DL_FUNC) &astro_write_nested_healpix_patch, 9},
-	  {"astro_write_vector_to_healpix_file_0", (DL_FUNC) &astro_write_vector_to_healpix_file_0, 5},
-	  NULL
-};
-
-void R_init_HealR( DllInfo *info )
-{
-  R_registerRoutines( info, cMethods, NULL, NULL, NULL );
-  R_useDynamicSymbols( info, FALSE );
-}
 
 
-static void astro_extract_nested_healpix_patch( char **filename, int *nside, int *patch, int *nrow, int *rows, int *ncol, int *cols, double *x, int *status, int *hdu_no, int *col_no )
+void astro_extract_nested_healpix_patch( char **filename, int *nside, int *patch, int *nrow, int *rows, int *ncol, int *cols, double *x, int *status, int *hdu_no, int *colnum );
+
+void astro_create_nested_healpix_file( char **filename, int *nside, int *nfields, int *status );
+
+void astro_write_nested_healpix_patch( char **filename, double *x, int *nside, int *colnum, int *status, int  *patch );
+
+void astro_write_vector_to_healpix_file_0( char **filename, double *x, int *nside, int *colnum, int *status );
+
+void astro_extract_nested_healpix_patch( char **filename, int *nside, int *patch, int *nrow, int *rows, int *ncol, int *cols, double *x, int *status, int *hdu_no, int *colnum )
 {
 
 	//x will be a vector of size length(rows)*length(cols) to be stacked column major
 
 	int  	i, j, k, xi, yi, z, stat = 0, ord, 
-			hdu_num = *hdu_no, hdu_type, any_null, col_num  = *col_no ;
+			hdu_num = *hdu_no, hdu_type, any_null, col_num = *colnum ;
 			
 	double *y, nulval = FITS_NULL_VAL ;
 	
@@ -60,7 +44,7 @@ static void astro_extract_nested_healpix_patch( char **filename, int *nside, int
 	
 	fitsfile *fp;
 	
-	if( fits_open_file( &fp, *filename, READONLY, &stat ) ) { status[0] = 104; return; } 
+	if( fits_open_file( &fp, *filename, READONLY, &stat ) ) { status[0] = stat; return; } 
 	
 	stat = 0 ;
 	
@@ -68,11 +52,9 @@ static void astro_extract_nested_healpix_patch( char **filename, int *nside, int
 	
 	y = calloc( (*nside)*(*nside) , sizeof(double) ) ;
 	
-	if( fits_movabs_hdu( fp, hdu_num, &hdu_type, &stat ) ) { free(y); status[0] = 301; return; }
+	if( fits_movabs_hdu( fp, hdu_num, &hdu_type, &stat ) ) { status[0] = stat; return; }
 	
-	stat = 0 ;
-	
-	if( fits_read_col( fp, TDOUBLE, col_num, row, elem, n , &nulval, y, &any_null, &stat ) ) { free(y); status[0] = 302; return;} ;
+	if( fits_read_col( fp, TDOUBLE, col_num, row, elem, n , &nulval, y, &any_null, &stat ) ) { status[0] = stat; return; } ;
 		
 	//now pull out the relevant entries and place in to x (column major)
 	
@@ -105,39 +87,40 @@ static void astro_extract_nested_healpix_patch( char **filename, int *nside, int
 
 }
 
-static void astro_create_nested_healpix_file( char **filename, int *nside, int *nfields, int *status )
+void astro_create_nested_healpix_file( char **filename, int *nside, int *nfields, int *status )
 {
 	
 	healpix_utils_create_nested_healpix_file( *filename, *nside, *nfields, status ) ;
 
 }
 
-static void astro_write_nested_healpix_patch( char **filename, double *x, int *nside, int *nwrite, int *rows, int *cols, int *colnum, int *status, int *patch )
+void astro_write_nested_healpix_patch( char **filename, double *x, int *nside, int *colnum, int *status, int *patch )
 {
 	
 	fitsfile *fp;
 	int i, j;
-	int a, k, l, stat = 0, any_null, hdunum=2, hdutype, count,
-	   elem=1, nelem = ( *nside ) * ( *nside ), col_num = *colnum,
-	   row = ( *patch ) * nelem + 1 , longnull=0;
+	int a, k, l, stat = 0, anynul, hdunum=2, hdutype, count,
+	   felem=1, nelem = ( *nside ) * ( *nside ), column = *colnum,
+	   frow = ( *patch ) * nelem + 1 , longnull=0;
 	
-	double *y = calloc( nelem, sizeof(double) ), nulval = FITS_NULL_VAL;
+	double *y = calloc( nelem, sizeof(double) );
 	
-	if( fits_open_file( &fp, *filename , READWRITE, &stat ) ) { free(y); status[0] = 104; return; }
-	if( fits_movabs_hdu( fp, hdunum, &hdutype, &stat ) ) { free(y); status[0] = 301; return; }
+	for( i=0; i<*nside; i++ )
+	{
+		for( j=0; j<*nside; j++ )
+		{
+			k = xyf2nest2( *nside, i, j , 0) ;
+			y[k] = x[ (*nside) * j + i ] ; 
+		}
+	}
 	
-	if( fits_read_col( fp, TDOUBLE, col_num, row, elem, nelem , &nulval, y, &any_null, &stat ) ) { free(y); status[0] = 302; return;} ;
-      
-  // now overwrite the appropriate values in y
-  for( l=0; l<*nwrite; l++ )
-  {
-    i = rows[l];
-    j = cols[l];
-    k = xyf2nest2( *nside, i, j, 0);
-    y[k] = x[l];
-  }
-
-	if( fits_write_col( fp, TDOUBLE, col_num, row, elem, nelem, (void *)y, &stat ) ) { status[0] = 106; return;} ;
+	if( fits_open_file( &fp, *filename , READWRITE, &stat ) )
+		{ *status = 104; return; }
+	
+	if( fits_movabs_hdu( fp, hdunum, &hdutype, &stat ) ) 
+		{ *status = 104; return; }
+	
+	fits_write_col( fp, TDOUBLE, column, frow, felem, nelem, (void  *)y, &stat ) ;
 	
 	fits_close_file( fp, &stat );
 	
@@ -148,7 +131,7 @@ static void astro_write_nested_healpix_patch( char **filename, double *x, int *n
 	return;
 }
 
-static void astro_write_vector_to_healpix_file_0( char **filename, double *x, int *nside, int *colnum, int *status )
+void astro_write_vector_to_healpix_file_0( char **filename, double *x, int *nside, int *colnum, int *status )
 {
 	
 	fitsfile *fp;
@@ -162,10 +145,9 @@ static void astro_write_vector_to_healpix_file_0( char **filename, double *x, in
 		{ *status = 104; return; }
 	
 	if( fits_movabs_hdu( fp, hdunum, &hdutype, &stat ) ) 
-		{ *status = 301; return; }
+		{ *status = 104; return; }
 	
-	if( fits_write_col( fp, TDOUBLE, column, frow, felem, nelem, (void  *)x, &stat ) )
-	  { *status = 302; return; }
+	fits_write_col( fp, TDOUBLE, column, frow, felem, nelem, (void  *)x, &stat )  ;
 	
 	fits_close_file( fp, &stat );
 	

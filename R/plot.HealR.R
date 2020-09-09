@@ -1,5 +1,10 @@
 plot.HealR <- function( x, show=1, main="", colorgradient=c("darkblue","white","darkred"), mask.color = "grey25", ... )
 {
+ 	# check if cast as type 'Matrix' 
+  if( x$output.Matrix )
+  {
+    stop("cant plot this a.t.m.")
+  }
   
   if( x$subim )
   {
