@@ -1,0 +1,584 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/astro_R_interface.c",
+                "kind" : 6,
+                "line" : 33,
+                "name" : "astro_extract_nested_healpix_patch(char **, int *, int *, int *, int *, int *, int *, double *, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@astro_extract_nested_healpix_patch#**C#*I#S2_#S2_#S2_#S2_#S2_#*d#S2_#S2_#S2_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/astro_R_interface.c",
+                "kind" : 6,
+                "line" : 90,
+                "name" : "astro_create_nested_healpix_file(char **, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@astro_create_nested_healpix_file#**C#*I#S2_#S2_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/astro_R_interface.c",
+                "kind" : 6,
+                "line" : 97,
+                "name" : "astro_write_nested_healpix_patch(char **, double *, int *, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@astro_write_nested_healpix_patch#**C#*d#*I#S3_#S3_#S3_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/astro_R_interface.c",
+                "kind" : 6,
+                "line" : 134,
+                "name" : "astro_write_vector_to_healpix_file_0(char **, double *, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@astro_write_vector_to_healpix_file_0#**C#*d#*I#S3_#S3_#"
+            }
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/astro_R_interface.c",
+        "file_last_write" : 1599650596
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 37,
+                "name" : "util_fail_(const char *, int, const char *, const char *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@util_fail_#*1C#I#S0_#S0_#"
+            },
+            {
+                "column" : 14,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 58,
+                "name" : "util_malloc_(size_t)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@util_malloc_#l#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 66,
+                "name" : "util_free_(void *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@util_free_#*v#"
+            },
+            {
+                "column" : 15,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 72,
+                "name" : "fmodulo(double, double)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@fmodulo#d#d#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 83,
+                "name" : "imodulo(int, int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@imodulo#I#I#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 85,
+                "name" : "isqrt(int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@isqrt#I#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 134,
+                "name" : "xyf2nest2(int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@xyf2nest2#I#I#I#I#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 141,
+                "name" : "xyf2ring2(int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@xyf2ring2#I#I#I#I#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 176,
+                "name" : "xyf2nest(int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@xyf2nest#I#I#I#I#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 182,
+                "name" : "nest2xyf(int, int, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@nest2xyf#I#I#*I#S0_#S0_#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 193,
+                "name" : "xyf2ring(int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@xyf2ring#I#I#I#I#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 227,
+                "name" : "ring2xyf(int, int, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@ring2xyf#I#I#*I#S0_#S0_#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 295,
+                "name" : "ang2pix_nest_z_phi(long, double, double)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@ang2pix_nest_z_phi#L#d#d#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 348,
+                "name" : "ang2pix_ring_z_phi(long, double, double)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@ang2pix_ring_z_phi#L#d#d#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 388,
+                "name" : "pix2ang_ring_z_phi(int, int, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@pix2ang_ring_z_phi#I#I#*d#S0_#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 425,
+                "name" : "pix2ang_nest_z_phi(int, int, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@pix2ang_nest_z_phi#I#I#*d#S0_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 462,
+                "name" : "ang2vec(double, double, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ang2vec#d#d#*d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 470,
+                "name" : "vec2ang(const double *, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@vec2ang#*1d#*d#S1_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 477,
+                "name" : "npix2nside(long)",
+                "parent_name" : "",
+                "usr" : "c:@F@npix2nside#L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 483,
+                "name" : "nside2npix(const long)",
+                "parent_name" : "",
+                "usr" : "c:@F@nside2npix#1L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 486,
+                "name" : "ang2pix_ring(long, double, double, long *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ang2pix_ring#L#d#d#*L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 491,
+                "name" : "ang2pix_nest(long, double, double, long *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ang2pix_nest#L#d#d#*L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 496,
+                "name" : "vec2pix_ring(long, const double *, long *)",
+                "parent_name" : "",
+                "usr" : "c:@F@vec2pix_ring#L#*1d#*L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 501,
+                "name" : "vec2pix_nest(long, const double *, long *)",
+                "parent_name" : "",
+                "usr" : "c:@F@vec2pix_nest#L#*1d#*L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 506,
+                "name" : "pix2ang_ring(long, long, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2ang_ring#L#L#*d#S0_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 512,
+                "name" : "pix2ang_nest(long, long, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2ang_nest#L#L#*d#S0_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 518,
+                "name" : "pix2vec_ring(long, long, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2vec_ring#L#L#*d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 527,
+                "name" : "pix2vec_nest(long, long, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2vec_nest#L#L#*d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 536,
+                "name" : "nest2ring(long, long, long *)",
+                "parent_name" : "",
+                "usr" : "c:@F@nest2ring#L#L#*L#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 543,
+                "name" : "ring2nest(long, long, long *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ring2nest#L#L#*L#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 553,
+                "name" : "imodulo64(hpint64, hpint64)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@imodulo64#K#K#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 555,
+                "name" : "isqrt64(hpint64)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@isqrt64#K#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 566,
+                "name" : "spread_bits64(int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@spread_bits64#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 574,
+                "name" : "compress_bits64(hpint64)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@compress_bits64#K#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 582,
+                "name" : "xyf2nest64(hpint64, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@xyf2nest64#K#I#I#I#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 587,
+                "name" : "nest2xyf64(hpint64, hpint64, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@nest2xyf64#K#K#*I#S0_#S0_#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 597,
+                "name" : "xyf2ring64(hpint64, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@xyf2ring64#K#I#I#I#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 631,
+                "name" : "ring2xyf64(hpint64, hpint64, int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@ring2xyf64#K#K#*I#S0_#S0_#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 700,
+                "name" : "ang2pix_nest_z_phi64(hpint64, double, double, double)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@ang2pix_nest_z_phi64#K#d#d#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 757,
+                "name" : "ang2pix_ring_z_phi64(hpint64, double, double, double)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@ang2pix_ring_z_phi64#K#d#d#d#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 798,
+                "name" : "pix2ang_ring_z_phi64(hpint64, hpint64, double *, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@pix2ang_ring_z_phi64#K#K#*d#S0_#S0_#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 841,
+                "name" : "pix2ang_nest_z_phi64(hpint64, hpint64, double *, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:chealpix.c@F@pix2ang_nest_z_phi64#K#K#*d#S0_#S0_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 887,
+                "name" : "npix2nside64(hpint64)",
+                "parent_name" : "",
+                "usr" : "c:@F@npix2nside64#K#"
+            },
+            {
+                "column" : 9,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 893,
+                "name" : "nside2npix64(hpint64)",
+                "parent_name" : "",
+                "usr" : "c:@F@nside2npix64#K#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 896,
+                "name" : "ang2pix_ring64(hpint64, double, double, hpint64 *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ang2pix_ring64#K#d#d#*K#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 902,
+                "name" : "ang2pix_nest64(hpint64, double, double, hpint64 *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ang2pix_nest64#K#d#d#*K#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 908,
+                "name" : "vec2pix_ring64(hpint64, const double *, hpint64 *)",
+                "parent_name" : "",
+                "usr" : "c:@F@vec2pix_ring64#K#*1d#*K#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 915,
+                "name" : "vec2pix_nest64(hpint64, const double *, hpint64 *)",
+                "parent_name" : "",
+                "usr" : "c:@F@vec2pix_nest64#K#*1d#*K#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 922,
+                "name" : "pix2ang_ring64(hpint64, hpint64, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2ang_ring64#K#K#*d#S0_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 928,
+                "name" : "pix2ang_nest64(hpint64, hpint64, double *, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2ang_nest64#K#K#*d#S0_#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 934,
+                "name" : "pix2vec_ring64(hpint64, hpint64, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2vec_ring64#K#K#*d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 943,
+                "name" : "pix2vec_nest64(hpint64, hpint64, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pix2vec_nest64#K#K#*d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 952,
+                "name" : "nest2ring64(hpint64, hpint64, hpint64 *)",
+                "parent_name" : "",
+                "usr" : "c:@F@nest2ring64#K#K#*K#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+                "kind" : 6,
+                "line" : 959,
+                "name" : "ring2nest64(hpint64, hpint64, hpint64 *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ring2nest64#K#K#*K#"
+            }
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.c",
+        "file_last_write" : 1599650596
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 19,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.h",
+                "kind" : 8,
+                "line" : 111,
+                "name" : "hpint64",
+                "parent_name" : "",
+                "usr" : "c:chealpix.h@T@hpint64"
+            }
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/chealpix.h",
+        "file_last_write" : 1599650596
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/defs.h",
+        "file_last_write" : 1599650596
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/home/jason/Dropbox/githubrepos/HealR/src/healpix_utils.c",
+                "kind" : 6,
+                "line" : 3,
+                "name" : "healpix_utils_create_nested_healpix_file(char *, int, int, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@healpix_utils_create_nested_healpix_file#*C#I#I#*I#"
+            }
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/healpix_utils.c",
+        "file_last_write" : 1599650596
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/healpix_utils.h",
+        "file_last_write" : 1599650596
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/jason/Dropbox/githubrepos/HealR/src/required_libs.h",
+        "file_last_write" : 1599650596
+    }
+]
