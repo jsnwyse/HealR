@@ -1,6 +1,6 @@
 Package: HealR
 Type: Package
-Title: I/O and visualisation tools for FITS files in Healpix nested orderings
+Title: I/O and visualisation tools for FITS files in Healpix nested orderings only
 Version: 1.0
 Date: 2018-03-02
 Depends: Matrix, imager, scales
